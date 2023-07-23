@@ -2,6 +2,8 @@ import chess
 import chess.svg
 import chess.engine
 import random
+from IPython.display import SVG, display
+
 
 class SimpleChessEngine:
     def __init__(self, depth=3):
@@ -136,10 +138,10 @@ class SimpleChessEngine:
 
 def play_chess():
     board = chess.Board()
-    engine = SimpleChessEngine(depth=5)
+    engine = SimpleChessEngine(depth=3)
 
     while not board.is_game_over():
-        print(board)
+        display(SVG(chess.svg.board(board, size=400)))
         if board.turn == chess.WHITE:
             player_move = input("Your move (in UCI format, e.g., 'e2e4'): ")
             try:
@@ -159,6 +161,7 @@ def play_chess():
                 print("No legal moves for Black. Game Over!")
                 break
 
+    display(SVG(chess.svg.board(board, size=400)))
     print("Game Over!")
     print("Result:", board.result())
 

@@ -138,7 +138,7 @@ class SimpleChessEngine:
 
 def play_chess():
     board = chess.Board()
-    engine = SimpleChessEngine(depth=3)
+    engine = SimpleChessEngine(depth=5)
 
     while not board.is_game_over():
         display(SVG(chess.svg.board(board, size=400)))

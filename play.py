@@ -1,3 +1,8 @@
+import chess
+import random
+from IPython.display import SVG, display
+import chess.svg
+
 from engine import SimpleChessEngine
 def play_chess():
     board = chess.Board()

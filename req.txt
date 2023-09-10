@@ -2,3 +2,5 @@ numpy
 python-chess
 cairosvg
 IPython
+Random
+
